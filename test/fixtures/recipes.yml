@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  category: MyString
+  marked_as_cooked: false
+
+two:
+  title: MyString
+  category: MyString
+  marked_as_cooked: false

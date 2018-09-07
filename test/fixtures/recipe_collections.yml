@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  marked_as_cooked: false
+  user: one
+  recipe: one
+
+two:
+  name: MyString
+  marked_as_cooked: false
+  user: two
+  recipe: two
