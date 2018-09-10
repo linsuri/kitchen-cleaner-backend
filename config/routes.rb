@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index]
       resources :recipes, only: [:index]
       resources :user_recipes, only: [:index]
+      post '/show_recipes', to: "recipes#show_recipes"
     end
   end
 end
