@@ -5,10 +5,6 @@ class Api::V1::UsersController < ApplicationController
     render json: @users
   end
 
-  def show
-
-  end
-
   def create
     @user = User.new(user_params)
     if @user.save
@@ -17,7 +13,7 @@ class Api::V1::UsersController < ApplicationController
       if params[:name] == ''
         render json: {errors: "Username field must not be blank"}
       else
-        render json: {errors: "Username already exist"}
+        render json: {errors: "Username already exists"}
       end
     end
   end

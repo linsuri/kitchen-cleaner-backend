@@ -1,8 +1,8 @@
 class Recipe < ApplicationRecord
   serialize :recipe_object, JSON
+  validates :recipe_object, uniqueness: true
 
-
-  has_many :users
+  belongs_to :user
 end
 
 

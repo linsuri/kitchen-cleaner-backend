@@ -1,6 +1,6 @@
 class RecipeSerializer < ActiveModel::Serializer
-  serialize :recipe_object, JSON
+  # serialize :recipe_object, JSON
 
-  has_many :users
+  belongs_to :user
   attributes :id, :recipe_object
 end
