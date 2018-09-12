@@ -5,11 +5,12 @@ class Api::V1::RecipesController < ApplicationController
   end
 
   def show_recipes
-    app_id = '8d1d3268'
-    app_key = 'ccb8a47a38fe914e9ab5698068bc2dec'
-    url = "http://api.yummly.com/v1/api/recipes?_app_id=" + app_id + "&_app_key=" + app_key + params["ingredients"]
+    url = "http://api.yummly.com/v1/api/recipes?_app_id=" + ENV["SECRET_ONE"] + "&_app_key=" + ENV["SECRET_TWO"] + params["ingredients"]
     request = RestClient.get(url)
     response = JSON.parse(request)
+    # response.matches.each do |recipe| 
+    #   Recipe.create(alkrlkjaerg: recipe.algerjlaejrg)
+    # end
     render json: response
   end
 

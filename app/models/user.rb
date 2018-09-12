@@ -1,4 +1,6 @@
 class User < ApplicationRecord
-  has_many :user_recipes
-  has_many :recipes, through: :user_recipes
+  validates :name, {presence: true, uniqueness: true}
+
+
+  has_many :recipes
 end
