@@ -4,9 +4,10 @@ class Api::V1::RecipesController < ApplicationController
     render json: @recipes
   end
 
+  ####################### Not working. Might be because of strong params.
   def create
-    # byebug
-    @recipe = Recipe.new(recipe_params)
+    @recipe = Recipe.new(recipe_object: params[:recipe_object], user: params[:user])
+    byebug
     if @recipe.save
       render json: @recipe
     else
