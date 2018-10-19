@@ -1,4 +1,1 @@
-User.create(name: 'rick')
-User.create(name: 'morty')
-
-Recipe.create(recipe_object: '', user_id: 1)
+User.create(user_name: 'guest', password: 'guest')
