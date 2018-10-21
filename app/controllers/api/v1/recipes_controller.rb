@@ -18,7 +18,7 @@ class Api::V1::RecipesController < ApplicationController
   end
 
   def show_recipes
-    url = "http://api.yummly.com/v1/api/recipes?_app_id=" + ENV["SECRET_ONE"] + "&_app_key=" + ENV["SECRET_TWO"] + params["ingredients"]
+    url = "http://api.yummly.com/v1/api/recipes?_app_id=" + ENV["SECRET_ONE"] + "&_app_key=" + ENV["SECRET_TWO"] + params["ingredients"] + "&maxResult=400&start=400"
     request = RestClient.get(url)
     response = JSON.parse(request)
     # response.matches.each do |recipe|
