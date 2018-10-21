@@ -8,12 +8,11 @@ class Api::V1::RecipesController < ApplicationController
 
   ####################### Not working. Might be because of strong params.
   def create
-    @recipe = Recipe.new(recipe_object: params[:recipe_object], user: params[:user])
-    byebug
-    if @recipe.save
-      render json: @recipe
+    @recipe = Recipe.create(recipe_object: params[:recipe][:recipe_object], user_id: recipe_params[:user_id])
+    if @recipe.valid?
+      render json: { recipe: RecipeSerializer.new(@recipe) }, status: :created
     else
-      render json: {errors: "Recipe did not save"}
+      render json: {errors: "Recipe did not save"}, status: :not_acceptable
     end
   end
 
@@ -30,6 +29,6 @@ class Api::V1::RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.permit(:recipe_object, :user)
+    params.require(:recipe).permit(:recipe_object, :user_id)
   end
 end
