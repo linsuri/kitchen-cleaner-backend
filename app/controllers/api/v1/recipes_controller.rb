@@ -16,10 +16,9 @@ class Api::V1::RecipesController < ApplicationController
   end
 
   def destroy
-    byebug
     @recipe = Recipe.find_by(recipe_object: params[:recipe][:recipe_object], user_id: recipe_params[:user_id])
     if @recipe.destroy
-      render json: { message: "Recipe unsaved" }, status: :accepted
+      render json: { recipe: RecipeSerializer.new(@recipe), message: "Recipe unsaved" }, status: :accepted
     else
       render json: { errors: "Recipe unsave failed" }, status: :not_acceptable
     end
