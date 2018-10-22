@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.3.3'
+ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
@@ -17,7 +17,7 @@ gem 'puma', '~> 3.11'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'rest-client'
-gem 'json'
+gem 'json', '~> 1.8', '>= 1.8.3'
 gem 'figaro'
 gem "jwt", "~> 2.1"
 gem "faker", "~> 1.9"
