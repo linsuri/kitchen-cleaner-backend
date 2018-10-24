@@ -18,6 +18,8 @@ class Api::V1::UsersController < ApplicationController
     else
       if params[:user][:user_name] == ''
         render json: {errors: "Username field must not be blank"}, status: :not_acceptable
+      elsif params[:user][:password] == ''
+        render json: {errors: "Password field must not be blank"}, status: :not_acceptable
       else
         render json: {errors: "Username already exists"}, status: :not_acceptable
       end

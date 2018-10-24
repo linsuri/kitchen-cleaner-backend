@@ -2,7 +2,10 @@
 
 Kitchen Cleaner is a web application that helps you find recipes for the ingredients you already have on hand (or in the back of the fridge and that are going bad soon). You can save your favorite recipes to access them again in the future. Use Kitchen Cleaner on your next meal prep and never waste any food again!
 
-## Installing / Getting started
+## Live Demo
+Play around with the [live demo here](https://kitchen-cleaner.herokuapp.com/). You can start exploring the app by typing in a list of ingredients and click `Get Recipes`, but if you want to save a recipe you must sign up for a new account and/or be logged in.
+
+## Installing Locally
 
 1. Follow on the links for both the [frontend](https://github.com/linsuri/kitchen-cleaner-frontend) and [backend](https://github.com/linsuri/kitchen-cleaner-backend).
 2. Clone both of them down into separate folders on your computer.
